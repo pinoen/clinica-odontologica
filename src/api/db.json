@@ -1,0 +1,153 @@
+{
+  "odontologos": [
+    {
+      "nombre": "Pinola",
+      "apellido": "Enzo",
+      "matricula": "145263",
+      "id": 1
+    },
+    {
+      "nombre": "Esteban",
+      "apellido": "Fernandez",
+      "matricula": "4566",
+      "id": 2
+    },
+    {
+      "nombre": "Francisco",
+      "apellido": "Loyola",
+      "matricula": "Z4512",
+      "id": 7
+    },
+    {
+      "nombre": "Carlos",
+      "apellido": "Saul",
+      "matricula": "2222",
+      "id": 8
+    },
+    {
+      "nombre": "Esteban",
+      "apellido": "Sarmiento",
+      "matricula": "5522",
+      "id": 9
+    }
+  ],
+  "pacientes": [
+    {
+      "id": 1,
+      "nombre": "Enrique",
+      "apellido": "Vazquez",
+      "domicilio": {
+        "calle": "Biritos",
+        "numero": 147,
+        "localidad": "Godoy Cruz",
+        "provincia": "Mendoza"
+      },
+      "email": "enrique@yahoo.com",
+      "dni": 20147852,
+      "alta": "2020-10-10"
+    },
+    {
+      "id": 2,
+      "nombre": "Sebastian",
+      "apellido": "Veron",
+      "domicilio": {
+        "calle": "Tucuman",
+        "numero": 582,
+        "localidad": "Catriel",
+        "provincia": "Rio Negro"
+      },
+      "email": "sebas@yahoo.com",
+      "dni": 25654213,
+      "alta": "2014-11-20"
+    },
+    {
+      "nombre": "Emilio",
+      "apellido": "Frasetto",
+      "domicilio": {
+        "calle": "San Lorenzo",
+        "numero": "777",
+        "localidad": "Salta",
+        "provincia": "Salta"
+      },
+      "email": "pinoen2016@gmail.com",
+      "dni": "86415285",
+      "alta": "2021-01-30",
+      "id": 7
+    }
+  ],
+  "turnos": [
+    {
+      "id": 1,
+      "paciente": {
+        "id": 1,
+        "nombre": "Enrique",
+        "apellido": "Vazquez",
+        "domicilio": {
+          "id": 1,
+          "calle": "Biritos",
+          "numero": 147,
+          "localidad": "Godoy Cruz",
+          "provincia": "Mendoza"
+        },
+        "email": "enrique@yahoo.com",
+        "dni": 20147852,
+        "alta": "2020-10-10"
+      },
+      "odontologo": {
+        "id": 1,
+        "nombre": "Emilio",
+        "apellido": "Pino",
+        "matricula": 1111
+      },
+      "fecha": "2022-11-30"
+    },
+    {
+      "id": 2,
+      "paciente": {
+        "id": 2,
+        "nombre": "Sebastian",
+        "apellido": "Veron",
+        "domicilio": {
+          "calle": "Tucuman",
+          "numero": 582,
+          "localidad": "Catriel",
+          "provincia": "Rio Negro"
+        },
+        "email": "sebas@yahoo.com",
+        "dni": 25654213,
+        "alta": "2014-11-20"
+      },
+      "odontologo": {
+        "id": 2,
+        "matricula": 2222,
+        "nombre": "Enzo",
+        "apellido": "Perez"
+      },
+      "fecha": "2022-12-05"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "pinoen",
+      "contrasena": "pinoen"
+    },
+    {
+      "id": 2,
+      "usuario": "vanem",
+      "contrasena": "vanem"
+    }
+  ],
+  "administradores": [
+    {
+      "id": 1,
+      "usuario": "enzop",
+      "contrasena": "enzop"
+    },
+    {
+      "id": 2,
+      "usuario": "estebanf",
+      "contrasena": "estebanf"
+    }
+  ]
+}
