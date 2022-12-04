@@ -9,9 +9,9 @@ const Footer = () => {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Desarrollado por Digital House
+              Desarrollado por DH
             </Typography>
-            <Button color="inherit">Emilio Pino</Button>
+            <Button><a style={{ color: '#FFF' }} href='https://github.com/pinoen' target={"_blank"} rel="noreferrer">Emilio Pino</a></Button>
           </Toolbar>
         </AppBar>
       </Box>

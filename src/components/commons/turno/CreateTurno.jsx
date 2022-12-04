@@ -18,18 +18,18 @@ const style = {
   p: 4,
 };
 
-export default function CreateOdontologo({ openCreate, handleCloseCreate }) {
+export default function CreateTurno({ openCreate, handleCloseCreate }) {
 
   const { handleChange, handleSubmit } = useFormik({
     initialValues: {
-      nombre: '',
-      apellido: '',
-      matricula: '',
+      paciente: '',
+      odontologo: '',
+      fecha: '',
     },
-    onSubmit: (data) => axios.post("http://localhost:5000/odontologos", {
-      nombre: data.nombre,
-      apellido: data.apellido,
-      matricula: data.matricula,
+    onSubmit: (data) => axios.post("http://localhost:5000/turnos", {
+      paciente: data.paciente,
+      odontologo: data.odontologo,
+      fecha: data.fecha,
     }).then(res => {
       handleCloseCreate()
     })
@@ -47,11 +47,11 @@ export default function CreateOdontologo({ openCreate, handleCloseCreate }) {
       >
         <Box sx={style}>
           <form className={styles.formContainer} onSubmit={handleSubmit}>
-            <Typography variant='h5' color='primary' >Agregar Odontologo</Typography>
+            <Typography variant='h5' color='primary' >Agregar Turno</Typography>
 
-            <TextField id="outlined-basic" label="Ingresar nombre" variant="outlined" name='nombre' onChange={handleChange} fullWidth />
-            <TextField id="outlined-basic" label="Ingresar apellido" variant="outlined" name='apellido' onChange={handleChange} fullWidth />
-            <TextField id="outlined-basic" label="Ingresar matricula" variant="outlined" name='matricula' onChange={handleChange} fullWidth />
+            <TextField id="outlined-basic" label="Paciente" variant="outlined" name='paciente' onChange={handleChange} fullWidth />
+            <TextField id="outlined-basic" label="Odontologo" variant="outlined" name='odontologo' onChange={handleChange} fullWidth />
+            <TextField id="outlined-basic" label="Fecha" variant="outlined" name='fecha' onChange={handleChange} fullWidth />
 
             <Button type='submit' variant='contained' color='primary'>Agregar</Button>
           </form>

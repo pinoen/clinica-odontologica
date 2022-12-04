@@ -1,0 +1,11 @@
+.loginContainer{
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../images/fondo_dentista_diente.jpg");
+  background-size: cover;
+}

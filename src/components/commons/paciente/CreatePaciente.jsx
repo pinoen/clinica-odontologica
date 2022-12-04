@@ -47,7 +47,7 @@ export default function CreatePaciente({ open, handleClose, setNewPaciente }) {
       dni: data.dni,
       alta: data.alta
     }).then(res => {
-      console.log(res)
+      handleClose()
       setNewPaciente(preVal => !preVal)
     })
       .catch(err => console.log(err))
@@ -63,7 +63,7 @@ export default function CreatePaciente({ open, handleClose, setNewPaciente }) {
       >
         <Box sx={style}>
           <form className={styles.formContainer} onSubmit={handleSubmit}>
-            <Typography variant='h4' color='primary' >Agregar Paciente</Typography>
+            <Typography variant='h5' color='primary' >Agregar Paciente</Typography>
 
             <TextField size='small' id="outlined-basic" label="Ingresar nombre" variant="outlined" name='nombre' onChange={handleChange} fullWidth />
             <TextField size='small' id="outlined-basic" label="Ingresar apellido" variant="outlined" name='apellido' onChange={handleChange} fullWidth />

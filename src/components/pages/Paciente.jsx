@@ -4,6 +4,7 @@ import PacienteCard from '../commons/paciente/PacienteCard'
 import styles from '../styles/Card.module.css'
 import CreatePaciente from '../commons/paciente/CreatePaciente'
 import { Button } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const Paciente = () => {
 
@@ -32,7 +33,11 @@ const Paciente = () => {
 
   return (
     <>
-      <Button onClick={handleOpen}>Agregar Paciente</Button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Button size='large' onClick={handleOpen}>Agregar Paciente</Button>
+        <Button size='large'><Link to={"/home"}>Menu Principal</Link></Button>
+      </div>
+
       <CreatePaciente open={open} handleClose={handleClose} setNewPaciente={setNewPaciente} />
       <div className={styles.cardContainer}>
         {pacientes.map(paciente =>

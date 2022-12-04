@@ -5,6 +5,8 @@ import styles from '../styles/Card.module.css'
 import { Button } from '@mui/material'
 import CreateOdontologo from '../commons/odontologo/CreateOdontologo'
 import UpdateOdontologo from '../commons/odontologo/UpdateOdontologo'
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 const Odontologo = () => {
@@ -27,14 +29,34 @@ const Odontologo = () => {
   const handleCloseUpdate = () => setOpenUpdate(false)
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/odontologos/${id}`)
-      .then(res => setDeleteOne(preVal => !preVal))
-      .catch(err => console.log(err))
+    Swal.fire({
+      title: 'Esta seguro de eliminar al odontologo?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Eliminado!',
+          'El odontologo ha sido eliminado.',
+          'success'
+        )
+        axios.delete(`http://localhost:5000/odontologos/${id}`)
+          .then(res => setDeleteOne(preVal => !preVal))
+          .catch(err => console.log(err))
+      }
+    })
   }
 
   return (
     <>
-      <Button onClick={handleOpenCreate} >Agregar Odontologo</Button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+
+        <Button size='large' onClick={handleOpenCreate} >Agregar Odontologo</Button>
+        <Button size='large'><Link to={"/home"}>Menu Principal</Link></Button>
+      </div>
       <CreateOdontologo openCreate={openCreate} handleCloseCreate={handleCloseCreate} />
 
 
